@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cola</title>
+</head>
+<body>
+    <div class="container">
+        <img src="C:\Users\nag13\Downloads\images\acheron.jpg" alt="Background Image" class="image">
+        <div class="overlay">
+            <div class="overlay-item" onclick="showPopup('Vùng nào của Việt Nam được mệnh danh là vựa lúa lớn nhất?', 'MIEN TAY', 0)">1</div>
+            <div class="overlay-item" onclick="showPopup('Loại phương tiện nào phổ biến ở miền Tây để di chuyển trên các kênh rạch?', 'THUYEN', 1)">2</div>
+            <div class="overlay-item" onclick="showPopup('Đây là hình ảnh về làng hoa Sa Đéc<br>Câu hỏi: Làng hoa Sa Đéc thuộc tỉnh nào?', 'DONG THAP', 2, 'https://i.imgur.com/Xe5h97I.png')">3</div>
+            <div class="overlay-item" onclick="showPopup('Tỉnh nào ở miền Tây nổi tiếng với món bánh xèo và nước dừa?', 'BEN TRE', 3)">4</div>
+            <div class="overlay-item" onclick="showPopup('Người đi chợ nổi Cái Răng<br>Sớm mai còn khuyết mảnh trăng hạ tuần<br>Thuyền ghe ngang dọc quây quần<br>Trăm quê bẹo dựng cột cần nhấp nhô<br>Câu hỏi: Các bạn hãy cho biết chợ Cái Răng nằm ở đâu?', 'CAN THO', 4, 'https://i.imgur.com/iw4ztZi.png')">5</div>
+            <div class="overlay-item" onclick="showPopup('Loại chợ nào đặc biệt ở miền Tây mà các hoạt động buôn bán diễn ra trên thuyền?', 'CHO NOI', 5)">6</div>
+            <div class="overlay-item" onclick="showPopup('Loại hoa nào thường được trồng nhiều ở miền Tây, biểu tượng của sự thanh cao và tinh khiết?', 'HOA SEN', 6)">7</div>
+            <div class="overlay-item" onclick="showPopup('Loại trái cây đặc sản nào của Vĩnh Long thường được gọi là nữ hoàng trái cây?', 'CHOM CHOM', 7)">8</div>
+            <div class="overlay-item" onclick="showPopup('Chùa Bôtum Vong Sa Som Rong với Tượng Phật nằm lớn nhất Việt Nam nằm ở đâu?', 'SOC TRANG', 8, 'https://i.imgur.com/gPmcyAx.png')">9</div>
+        </div>
+    </div>
+    <div id="popup" class="popup">
+        <h2 id="question">Câu hỏi</h2>
+        <img id="question-image" class="question-image" src="" alt="Hình ảnh câu hỏi" style="display: none;">
+        <div id="answer-field" class="answer-field"></div>
+        <div class="button-group">
+            <button class="close" onclick="closePopup()">Đóng</button>
+        </div>
+    </div>
+    
+    <div id="result-area">
+        <h2>Đây là nơi nào?</h2>
+        <div id="result-field"></div>
+        <button onclick="checkResult()">Kiểm tra</button>
+    </div>
+    
+    <script src="minigame.js"></script>
+</body>
+</html>

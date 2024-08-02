@@ -1,0 +1,204 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    position: relative;
+    width: 70vw; /* Giảm kích thước để tạo không gian cho danh sách bên phải */
+    height: 80vh;
+    max-width: 800px;
+    max-height: 600px;
+    display: flex;
+    align-items: center;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.overlay div {
+    border: 1px solid #fff;
+    background-color: rgb(49, 125, 192);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.overlay div.incorrect {
+    background-color: #fff; 
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1000;
+    text-align: center;
+    box-sizing: border-box;
+    animation: fadeIn 0.3s ease;
+}
+
+.popup h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.popup p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.popup img {
+    border-radius: 8px;
+    margin: 10px 0;
+    max-width: 100%;
+    height: auto;
+}
+
+.overlay div.correct {
+    background-color: transparent;
+}
+
+.answer-field {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.answer-field span {
+    border-bottom: 2px solid #333;
+    width: 30px;
+    text-align: center;
+    margin: 0 5px;
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.button-group button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background-color: #007BFF;
+    color: #fff;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button-group button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.button-group button:focus {
+    outline: none;
+}
+
+.button-group button.close {
+    background-color: #dc3545;
+}
+
+.button-group button.close:hover {
+    background-color: #c82333;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.answers-list {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30%;
+    height: 100%;
+    padding: 10px;
+    background-color: #fff;
+    border-left: 2px solid #ddd;
+    box-shadow: -4px 0 8px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+.answers-list h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.answers-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.answers-list li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 18px;
+    color: #333;
+}
+
+.result-field {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.guess-char {
+    display: inline-block;
+    width: 20px;
+    height: 30px;
+    border-bottom: 1px solid black;
+    text-align: center;
+    margin: 0 2px;
+    cursor: pointer;
+    user-select: none;
+}
+
+input[type="text"] {
+    border: none;
+    width: 100%;
+    text-align: center;
+}
+
