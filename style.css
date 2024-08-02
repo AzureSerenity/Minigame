@@ -9,7 +9,7 @@ body {
 
 .container {
     position: relative;
-    width: 70vw; /* Giảm kích thước để tạo không gian cho danh sách bên phải */
+    width: 70vw;
     height: 80vh;
     max-width: 800px;
     max-height: 600px;
@@ -187,13 +187,20 @@ body {
 
 .guess-char {
     display: inline-block;
-    width: 20px;
-    height: 30px;
-    border-bottom: 1px solid black;
+    width: 30px;
+    height: 40px;
+    border-bottom: 2px solid black; /*Duong vien dam hon*/
     text-align: center;
-    margin: 0 2px;
-    cursor: pointer;
+    margin: 0 3px; /*Khoang cach giua cac o*/
+    cursor: text;
     user-select: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.guess-char:focus {
+    outline: none;
+    border-bottom: 2px solid #007BFF;
 }
 
 input[type="text"] {
@@ -201,4 +208,3 @@ input[type="text"] {
     width: 100%;
     text-align: center;
 }
-

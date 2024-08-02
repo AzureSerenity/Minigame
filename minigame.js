@@ -75,11 +75,11 @@ function closePopup() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    const answer = 'SONGCUULONG';
+    const answer = 'DONG BANG SONG CUU LONG';
     const resultField = document.getElementById('result-field');
     resultField.innerHTML = '';
     
-    for (let i = 0; i < answer.length; i++) {
+    for (let i = 0; i < answer.replace(/\s+/g, '').length; i++) {
         const span = document.createElement('div');
         span.className = 'guess-char';
         span.setAttribute('contenteditable', true);
@@ -108,14 +108,14 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function checkResult() {
-    const answer = 'SONGCUULONG';
+    const answer = 'DONG BANG SONG CUU LONG'.replace(/\s+/g, ''); 
     let userGuess = '';
     document.querySelectorAll('#result-field .guess-char').forEach(function(span) {
         userGuess += span.innerText.toUpperCase();
     });
     if (userGuess === answer) {
         alert('Chính xác!');
-        revealAllOverlays(); // Mở tất cả lớp phủ khi đáp án đúng
+        revealAllOverlays(); 
     } else {
         alert('Sai rồi, thử lại nhé!');
     }
